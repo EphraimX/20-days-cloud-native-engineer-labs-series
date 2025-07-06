@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: demo-voting-app
+    app: {{.Values.appName}}
   name: redis
-  namespace: vote
+  namespace: {{.Values.nameSpace}}
 spec:
   replicas: 1
   selector:
