@@ -20,3 +20,5 @@ data "aws_instances" "cnel_node_instances" {
     values = ["running"]
   }
 }
+
+
