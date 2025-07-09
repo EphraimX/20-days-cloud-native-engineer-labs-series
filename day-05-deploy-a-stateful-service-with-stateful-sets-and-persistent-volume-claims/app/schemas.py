@@ -11,7 +11,7 @@ class UserOut(BaseModel):
     email: str
     name: str
     class Config:
-        orm_mode = True
+        form_attributes = True
 
 class ProductOut(BaseModel):
     id: int
@@ -20,7 +20,7 @@ class ProductOut(BaseModel):
     stock: int
     image_url: str
     class Config:
-        orm_mode = True
+        form_attributes = True
 
 class CartItemCreate(BaseModel):
     product_id: int
@@ -29,13 +29,13 @@ class CartItemCreate(BaseModel):
 class CartItemOut(CartItemCreate):
     id: int
     class Config:
-        orm_mode = True
+        form_attributes = True
 
 class CartOut(BaseModel):
     id: int
     cart_items: List[CartItemOut]
     class Config:
-        orm_mode = True
+        form_attributes = True
 
 class OrderCreate(BaseModel):
     user_id: int
@@ -46,4 +46,4 @@ class OrderOut(BaseModel):
     total_amount: float
     status: str
     class Config:
-        orm_mode = True
+        form_attributes = True
